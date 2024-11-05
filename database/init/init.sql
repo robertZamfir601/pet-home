@@ -1,14 +1,14 @@
 CREATE TABLE Races (
-   id INT,
+   id SERIAL ,
    name VARCHAR(100) NOT NULL,
    PRIMARY KEY(id)
 );
 
 CREATE TABLE Subraces (
-   id INT,
+   id SERIAL,
    name VARCHAR(100) NOT NULL,
    description VARCHAR(1000),
-   recommandations VARCHAR(1000),
+   recommendation VARCHAR(1000),
    race_id INT,
 
    PRIMARY KEY(id),
@@ -16,7 +16,7 @@ CREATE TABLE Subraces (
 );
 
 CREATE TABLE Pets (
-   id INT,
+   id SERIAL,
    name VARCHAR(100) NOT NULL,
    date_of_birth DATE NOT NULL,
    subrace_id INT,
@@ -31,7 +31,7 @@ CREATE TABLE Pets (
 );
 
 CREATE TABLE Users (
-   id INT,
+   id SERIAL,
    email VARCHAR(100) NOT NULL,
    password VARCHAR(1000) NOT NULL,
    username VARCHAR(100) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Reviews (
-   id INT,
+   id SERIAL,
    text VARCHAR(100) NOT NULL,
    rating FLOAT(10),
    user_id INT,
@@ -53,7 +53,7 @@ CREATE TABLE Reviews (
 
 
 CREATE TABLE Adoptions (
-   id INT,
+   id SERIAL,
    date TIMESTAMP,
    billing_addres VARCHAR(200),
    user_id INT,
@@ -66,7 +66,7 @@ CREATE TABLE Adoptions (
 
 
 CREATE TABLE Orders (
-   id INT,
+   id SERIAL,
    billing_addres VARCHAR(200),
    shipping FLOAT(10),
    date DATE NOT NULL,
@@ -78,18 +78,20 @@ CREATE TABLE Orders (
 
 
 CREATE TABLE Products (
-   id INT,
+   id SERIAL,
    name VARCHAR(200),
    description VARCHAR(1000),
    price FLOAT(10),
-   quantity FLOAT(10),
+   quantity INT,
+   photo_url VARCHAR(10000),
+   rating FLOAT(10),
 
    PRIMARY KEY(id)
 );
 
 
 CREATE TABLE Order_Product (
-   id INT,
+   id SERIAL,
    order_id INT,
    product_id INT,
    amount FLOAT(10),

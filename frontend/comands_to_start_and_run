@@ -1,0 +1,10 @@
+npx create-vite@latest . --template react
+npm install
+npm install react-icons
+npm run dev
+
+Build:
+npm run build
+
+# nu rula asta fara cap
+# cp -r ~/FrontEndReact/src/assets/ /mnt/e/D/ProiecteCV/Java_Spring/FrontEndReact/src/ 
